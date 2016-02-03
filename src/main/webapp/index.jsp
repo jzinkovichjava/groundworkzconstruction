@@ -9,22 +9,6 @@
 <title>Tomcat Server Datasource Example</title>
 </head>
 <body>
-<%
-Connection result = null;
-try {
-    InitialContext ic = new InitialContext();
-    Context initialContext = (Context) ic.lookup("java:comp/env");
-    DataSource datasource = (DataSource) initialContext.lookup("jdbc/MySQLDS");
-    result = datasource.getConnection();
-    Statement stmt = result.createStatement() ;
-    String query = "select * from names;" ;
-    ResultSet rs = stmt.executeQuery(query) ;
-    while (rs.next()) {
-        out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + "<br />");
-    }
-} catch (Exception ex) {
-    out.println("Exception: " + ex + ex.getMessage());
-}
-%>
+Jen Test
 </body>
 </html>
