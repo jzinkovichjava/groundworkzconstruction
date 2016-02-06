@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Tomcat Server Datasource Example</title>
+<title>Jen Intellij Test</title>
 </head>
 <body>
 Jen Test
