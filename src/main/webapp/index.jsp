@@ -45,11 +45,11 @@ angular.module('tomcatApp', []);
   <tr>
     <td height="546" align="left" valign="top"><table width="100%" border="0" align="center" bordercolor="#CCCCCC">
       <tr align="right" valign="top" bgcolor="#CCCCCC">
-        <td height="122" colspan="2"><div align="left"><img src="Untitled-1.jpg" width="299" height="120"></div></td>
+        <td height="122" colspan="2"><div align="left"><img src="images/Untitled-1.jpg" width="299" height="120"></div></td>
         </tr>
       <tr>
         <td width="16%" height="416" align="left" valign="top" bgcolor="#CCCCCC"><br>
-          <span class="style2"><a href="index.htm">Home</a><br>
+          <span class="style2"><a href="index.jsp">Home</a><br>
           <br>
           <a href="biography.htm">Biography</a><br>
           <br>
