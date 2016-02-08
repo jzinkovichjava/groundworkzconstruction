@@ -55,6 +55,8 @@ angular.module('tomcatApp', []);
           <br>
           <a href="services.htm">Services</a><br>
           <br>
+          <a href="customer.html">Customer Interest</a><br>
+          <br>
           <a href="mailto:keith@groundworkzconstruction.com">Email</a> </span></td>
         <td width="84%" align="right" valign="top"> <div align="center">
           <table width="100%" border="0">
