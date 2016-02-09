@@ -40,7 +40,7 @@
     <th:field type="text" id="email" value="*{emailAddress}"/>
 
     <label for="comments">Comments</label>
-    <textarea th:field id="comments" value="*{comments}"/>
+    <textarea th:field="*{comments}"></textarea>
 
     <label for="existingCustomers">Existing Customers</label>
 
