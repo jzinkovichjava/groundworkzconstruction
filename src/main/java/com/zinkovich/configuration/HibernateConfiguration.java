@@ -39,7 +39,7 @@ public class HibernateConfiguration {
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
         String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
-        String name = "tomcatapp";
+        String name = System.getenv("OPENSHIFT_APP_NAME");
         dataSource.setUrl("jdbc:mysql://" + host + ":" + port + "/" + name);
         dataSource.setUsername(System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"));
         dataSource.setPassword(System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD"));
