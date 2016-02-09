@@ -31,7 +31,7 @@ public class CustomerController {
         ModelAndView mv = new ModelAndView();
         mv.addObject("customer", new Customer());
         mv.addObject("listOfCustomers", customerService.findAllCustomers());
-        mv.setViewName("customer.html");
+        mv.setViewName("customer");
         return mv;
     }
 
