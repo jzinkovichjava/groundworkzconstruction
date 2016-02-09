@@ -13,35 +13,71 @@
 -->
 <form action="#" th:action="@{/customer/new}" th:object="${customer}" method="post">
 
-    <!-- Use th:field to show *{firstName} -->
-    <label for="firstName">First name:</label>
-    <th:field type="text" id="firstName" value="*{firstName}"/>
+    <div>
+        <label for="firstName">First name:</label>
+        <input class="form-control"
+               type="text"
+               id="firstName"
+               th:field="*{firstName}"/>
+    </div>
 
-    <!-- Use th:field to show *{lastName} -->
+    <div>
     <label for="lastName">Last name:</label>
-    <th:field type="text" id="lastName" value="*{lastName}"/>
+        <input class="form-control"
+               type="text"
+               id="lastName"
+               th:field="*{lastName}"/>
+        </div>
 
+    <div>
     <label for="address1">Address 1</label>
-    <th:field type="text" id="address1" value="*{address1}"/>
+        <input class="form-control"
+               type="text"
+               id="address1"
+               th:field="*{address1}"/>
+        </div>
 
-    <label for="address2">Address 2</label>
-    <th:field type="text" id="address2" value="*{address2}"/>
-
+    <div>
     <label for="city">City</label>
-    <th:field type="text" id="city" value="*{city}"/>
+        <input class="form-control"
+               type="text"
+               id="city"
+               th:field="*{city}"/>
+        </div>
 
+    <div>
     <label for="state">State</label>
-    <th:field type="text" id="state" value="*{state}"/>
+        <input class="form-control"
+               type="text"
+               id="state"
+               th:field="*{state}"/>
+        </div>
 
+    <div>
     <label for="zip">ZipCode</label>
-    <th:field type="text" id="zip" value="*{zipCode}"/>
+        <input class="form-control"
+               type="text"
+               id="zipCode"
+               th:field="*{zipCode}"/>
+        </div>
 
+    <div>
     <label for="email">Email</label>
-    <th:field type="text" id="email" value="*{emailAddress}"/>
+        <input class="form-control"
+               type="text"
+               id="email"
+               th:field="*{emailAddress}"/>
+        </div>
 
+    <div>
     <label for="comments">Comments</label>
-    <textarea th:field="*{comments}"></textarea>
+    <input class="form-control"
+           type="text"
+           id="comments"
+           th:field="*{comments}"/>
+    </div>
 
+    <div>
     <label for="existingCustomers">Existing Customers</label>
 
     <!-- ownersList.html -->
@@ -65,7 +101,7 @@
         </tr>
         </tbody>
     </table>
-
+    </div>
     <input type="submit" />
 </form>
 </body>
