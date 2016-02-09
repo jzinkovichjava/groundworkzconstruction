@@ -42,6 +42,9 @@ public class Customer {
     @Type(type = "org.hibernate.type.NumericBooleanType")
     private boolean prospective;
 
+    @Column(name="COMMENTS")
+    private String comments;
+
     public String getFirstName() {
         return firstName;
     }
@@ -136,5 +139,13 @@ public class Customer {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
     }
 }

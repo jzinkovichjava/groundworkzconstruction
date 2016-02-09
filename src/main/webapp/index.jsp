@@ -3,7 +3,7 @@
 <%@ page import='javax.sql.*' %>
 <%@ page import='javax.naming.*' %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html ng-app="tomcatApp">
+<<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>GroundWorkzConstruction.com</title>
@@ -35,11 +35,6 @@ a:active {
 .style10 {font-size: large}
 -->
 </style></head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js">
-</script>
-<script>
-angular.module('tomcatApp', []);
-</script>
 <body>
 <table width="716" border="3" align="center" bordercolor="#000000">
   <tr>
@@ -55,7 +50,7 @@ angular.module('tomcatApp', []);
           <br>
           <a href="services.htm">Services</a><br>
           <br>
-          <a href="customer.html">Customer Interest</a><br>
+          <a th:href="@{/customer}">Customer Interest</a>
           <br>
           <a href="mailto:keith@groundworkzconstruction.com">Email</a> </span></td>
         <td width="84%" align="right" valign="top"> <div align="center">

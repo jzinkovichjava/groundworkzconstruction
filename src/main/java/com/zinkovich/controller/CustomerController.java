@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.UriComponentsBuilder;
 import com.zinkovich.service.CustomerService;
 
@@ -25,13 +26,13 @@ public class CustomerController {
 
     //-------------------Retrieve All Users--------------------------------------------------------
 
-    @RequestMapping(value = "/customer/", method = RequestMethod.GET)
-    public ResponseEntity<List<Customer>> listAllCustomers() {
-        List<Customer> users = customerService.findAllCustomers();
-        if(users.isEmpty()){
-            return new ResponseEntity<List<Customer>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
-        }
-        return new ResponseEntity<List<Customer>>(users, HttpStatus.OK);
+    @RequestMapping(value = "/customer", method = RequestMethod.GET)
+    public ModelAndView getCustomerScreen () {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("customer", new Customer());
+        mv.addObject("listOfCustomers", customerService.findAllCustomers());
+        mv.setViewName("customer");
+        return mv;
     }
 
 
@@ -53,8 +54,8 @@ public class CustomerController {
 
     //-------------------Create a User--------------------------------------------------------
 
-    @RequestMapping(value = "/customer/", method = RequestMethod.POST)
-    public ResponseEntity<Void> createUser(@RequestBody Customer customer,    UriComponentsBuilder ucBuilder) {
+    @RequestMapping(value = "/customer/new", method = RequestMethod.POST)
+    public String createUser(@RequestBody Customer customer) {
         System.out.println("Creating User " + customer.getFirstName() + customer.getLastName());
 
 //        if (userService.isUserExist(user)) {
@@ -63,10 +64,7 @@ public class CustomerController {
 //        }
 
         customerService.saveCustomer(customer);
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/customer/{id}").buildAndExpand(customer.getId()).toUri());
-        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+        return "redirect:/customer";
     }
 
 

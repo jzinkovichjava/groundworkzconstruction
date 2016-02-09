@@ -8,7 +8,7 @@ public class SpringInitialization extends AbstractAnnotationConfigDispatcherServ
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] { SpringMVCConfiguration.class };
+        return new Class[] { AppConfig.class };
     }
 
     @Override
@@ -19,12 +19,6 @@ public class SpringInitialization extends AbstractAnnotationConfigDispatcherServ
     @Override
     protected String[] getServletMappings() {
         return new String[] { "/" };
-    }
-
-    @Override
-    protected Filter[] getServletFilters() {
-        Filter [] singleton = { new CORSFilter() };
-        return singleton;
     }
 
 }

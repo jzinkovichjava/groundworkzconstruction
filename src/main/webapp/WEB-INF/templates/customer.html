@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Groundworkzconstruction New Customer</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<h2>Customer Form</h2>
+<!--
+    Set the action attribute to "/exercise12/saveCustomer.html", and use
+    th:object to bind the ${customer} variable as the form-backing bean.
+-->
+<form action="#" th:action="@{/customer/new}" th:object="${customer}" method="post">
+
+    <!-- Use th:field to show *{firstName} -->
+    <label for="firstName">First name:</label>
+    <th:field type="text" id="firstName" value="*{firstName}"/>
+
+    <!-- Use th:field to show *{lastName} -->
+    <label for="lastName">Last name:</label>
+    <th:field type="text" id="lastName" value="*{lastName}"/>
+
+    <label for="address1">Address 1</label>
+    <th:field type="text" id="address1" value="*{address1}"/>
+
+    <label for="address2">Address 2</label>
+    <th:field type="text" id="address2" value="*{address2}"/>
+
+    <label for="city">City</label>
+    <th:field type="text" id="city" value="*{city}"/>
+
+    <label for="state">State</label>
+    <th:field type="text" id="state" value="*{state}"/>
+
+    <label for="zip">ZipCode</label>
+    <th:field type="text" id="zip" value="*{zipCode}"/>
+
+    <label for="email">Email</label>
+    <th:field type="text" id="email" value="*{emailAddress}"/>
+
+    <label for="comments">Comments</label>
+    <textarea th:field id="comments" value="*{comments}"/>
+
+    <label for="existingCustomers">Existing Customers</label>
+
+    <!-- ownersList.html -->
+    <h2>Existing Customers</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th style="width: 150px;">Name</th>
+            <th style="width: 200px;">Address</th>
+            <th>City</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer : ${listOfCustomers}">
+            <td th:text="|${customer.firstName} ${customer.lastName}|"/>
+            <td th:text="${customer.address}"/>
+            <td th:text="${customer.city}"/>
+            <td th:text="${customer.emailAddress}"/>
+        </tr>
+        </tbody>
+    </table>
+
+    <input type="submit" />
+</form>
+</body>
+</html>
