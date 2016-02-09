@@ -36,10 +36,13 @@ public class HibernateConfiguration {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
-        dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
-        dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
-        dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
+        String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
+        String name = "mytomcatapp";
+        dataSource.setUrl("jdbc:mysql://" + host + ":" + port + "/" + name);
+        dataSource.setUsername(System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"));
+        dataSource.setPassword(System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD"));
         return dataSource;
     }
 
