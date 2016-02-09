@@ -39,7 +39,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean
-    private SpringResourceTemplateResolver templateResolver() {
+    public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
         resolver.setPrefix("/WEB-INF/templates/");
         resolver.setSuffix(".html");
