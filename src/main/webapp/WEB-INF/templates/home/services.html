@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Groundworkzconstruction.com</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link href="../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+	<link href="../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+	<body>
+	<!-- Header -->
+	<div th:replace="fragments/header :: header"/>
+
+	<div class="container">
+
+		<h4>Select a service from the drop down to see more information about our service offerings.</h4>
+
+		<div class="form-group">
+			<label for="sel1">Service</label>
+			<select class="form-control" id="sel1">
+				<option>Decorative Concrete</option>
+				<option>Streets</option>
+				<option>Driveway</option>
+				<option>Interior</option>
+			</select>
+		</div>
+
+		<div th:replace="fragments/footer :: footer"/>
+	</div>
+	</body>
+</html>

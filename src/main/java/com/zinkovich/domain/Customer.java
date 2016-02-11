@@ -8,41 +8,49 @@ import javax.persistence.*;
  * Created by jrzinkovich on 2/7/16.
  */
 @Entity
-@Table(name="CUSTOMER")
+@Table(name="customer")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="FIRST_NAME")
+    @Column(name="first_name")
     private String firstName;
-    @Column(name="LAST_NAME")
+
+    @Column(name="last_name")
     private String lastName;
-    @Column(name="ADDRESS1")
+
+    @Column(name="address1")
     private String address1;
-    @Column(name="ADDRESS2")
+
+    @Column(name="address2")
     private String address2;
-    @Column(name="CITY")
+
+    @Column(name="city")
     private String city;
-    @Column(name="STATE")
+
+    @Column(name="state")
     private String state;
-    @Column(name="ZIPCODE")
-    private String zipCode;
-    @Column(name="EMAIL_ADDRESS")
+
+    @Column(name="zip")
+    private String zip;
+
+    @Column(name="email")
     private String emailAddress;
-    @Column(name="PHONE_NUMBER")
+
+    @Column(name="phone_number")
     private String phoneNumber;
 
-    @Column(name="EXISTING")
+    @Column(name="existing")
     @Type(type = "org.hibernate.type.NumericBooleanType")
     private boolean existing;
 
-    @Column(name="PROSPECTIVE")
+    @Column(name="prospective")
     @Type(type = "org.hibernate.type.NumericBooleanType")
-    private boolean prospective;
+    private boolean prospective = Boolean.TRUE;
 
-    @Column(name="COMMENTS")
+    @Column(name="comments")
     private String comments;
 
     public String getFirstName() {
@@ -93,12 +101,12 @@ public class Customer {
         this.state = state;
     }
 
-    public String getZipCode() {
-        return zipCode;
+    public String getZip() {
+        return zip;
     }
 
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
+    public void setZip(String zipCode) {
+        this.zip = zipCode;
     }
 
     public String getEmailAddress() {
@@ -147,5 +155,18 @@ public class Customer {
 
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("New Customer Stored");
+        sb.append("Customer Name:").append(this.firstName).append(" ").append(this.lastName);
+        sb.append(System.getProperty("line.separator"));
+        sb.append("Customer Address:").append(this.address1).append(" ").append(this.city).append(" ").append(this.state).append(" ").append(this.zip);
+        sb.append(System.getProperty("line.separator"));
+        sb.append("Customer Email:").append(" ").append(this.emailAddress).append(" ").append("Phone: ").append(" ").append(this.phoneNumber);
+        sb.append(System.getProperty("line.separator"));
+        sb.append("Comments: ").append(this.comments);
+        return sb.toString();
     }
 }

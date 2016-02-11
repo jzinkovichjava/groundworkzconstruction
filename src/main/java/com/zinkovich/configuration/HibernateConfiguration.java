@@ -28,7 +28,7 @@ public class HibernateConfiguration {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] { "com.zinkovich.model" });
+        sessionFactory.setPackagesToScan(new String[] { "com.zinkovich.domain" });
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
@@ -37,12 +37,12 @@ public class HibernateConfiguration {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
-        String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
-        String name = System.getenv("OPENSHIFT_APP_NAME");
+        String host = "127.0.0.1"; //System.getenv("OPENSHIFT_MYSQL_DB_HOST");
+        String port = "3306";//System.getenv("OPENSHIFT_MYSQL_DB_PORT");
+        String name = "tomcatapp"; //System.getenv("OPENSHIFT_APP_NAME");
         dataSource.setUrl("jdbc:mysql://" + host + ":" + port + "/" + name);
-        dataSource.setUsername(System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"));
-        dataSource.setPassword(System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD"));
+        dataSource.setUsername("adminKDzXrTR");//System.getenv("OPENSHIFT_MYSQL_DB_USERNAME"));
+        dataSource.setPassword("K44a6EqeU5EH");//System.getenv("OPENSHIFT_MYSQL_DB_PASSWORD"));
         return dataSource;
     }
 

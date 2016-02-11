@@ -3,19 +3,19 @@ package com.zinkovich.controller;
 import java.util.List;
 
 import com.zinkovich.domain.Customer;
+import com.zinkovich.service.EmailUtil;
+import com.zinkovich.service.SendMail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.UriComponentsBuilder;
 import com.zinkovich.service.CustomerService;
+
+import javax.mail.MessagingException;
 
 @RestController
 public class CustomerController {
@@ -31,7 +31,7 @@ public class CustomerController {
         ModelAndView mv = new ModelAndView();
         mv.addObject("customer", new Customer());
         mv.addObject("listOfCustomers", customerService.findAllCustomers());
-        mv.setViewName("customer");
+        mv.setViewName("home/customer");
         return mv;
     }
 
@@ -55,7 +55,7 @@ public class CustomerController {
     //-------------------Create a User--------------------------------------------------------
 
     @RequestMapping(value = "/customer/new", method = RequestMethod.POST)
-    public String createUser(@RequestBody Customer customer) {
+    public String createUser(@ModelAttribute Customer customer) {
         System.out.println("Creating User " + customer.getFirstName() + customer.getLastName());
 
 //        if (userService.isUserExist(user)) {
@@ -64,7 +64,15 @@ public class CustomerController {
 //        }
 
         customerService.saveCustomer(customer);
-        return "redirect:/customer";
+
+
+        try {
+            SendMail.sendMail("keith@groundworkzconstruction.com", "GroundworkzConstruction Contact Us Form", customer.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "redirect:/index.html";
     }
 
 
@@ -89,35 +97,5 @@ public class CustomerController {
         customerService.updateCustomer(customer);
         return new ResponseEntity<Customer>(customer, HttpStatus.OK);
     }
-
-
-
-//    //------------------- Delete a User --------------------------------------------------------
-//
-//    @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
-//    public ResponseEntity<User> deleteUser(@PathVariable("id") long id) {
-//        System.out.println("Fetching & Deleting User with id " + id);
-//
-//        User user = userService.findById(id);
-//        if (user == null) {
-//            System.out.println("Unable to delete. User with id " + id + " not found");
-//            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
-//        }
-//
-//        userService.deleteUserById(id);
-//        return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
-//    }
-
-
-
-//    //------------------- Delete All Users --------------------------------------------------------
-//
-//    @RequestMapping(value = "/user/", method = RequestMethod.DELETE)
-//    public ResponseEntity<User> deleteAllUsers() {
-//        System.out.println("Deleting All Users");
-//
-//        userService.deleteAllUsers();
-//        return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
-//    }
 
 }

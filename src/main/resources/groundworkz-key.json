@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "vibrant-ring-121823",
+  "private_key_id": "097e9a863c02b80b82999ebd1c6155e36a2fd51a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1U7i5HWlnaVo+\nFSmDs2IEjwkjhbTzkt5xrVw+iXNIpMBT9fZIBqviG/1JZ3753VGCb5nLpAM3HBCI\nch4l+4PdpnwMRmVA736dQ99S8i2U0YL1fFbUjM0uxZ7BmzO5t0DAlo+tyVGJZaft\nls6YvS6qP+2V7hKVdcCjk+ySvtrJ5C0jZbkGLfntOyVfcslXPloBtLx8t6AyoxQ4\npLa5UNcgqCaAR8u9k5E5WuK7Gp/R8W8RKZ1XH1Rt//kG0aYyP5PBP12ZLsfdczRG\n142e7JW0O92YQLQRjEv383ObBXgX8szLY+JfgxI0dfUsthpntVxX/Yc5I31h+5Ob\nKTAADMObAgMBAAECggEAKH07YEqLAMZrmjVLgdcKag4ucjom/8Sp2yRk1qoGjhAL\nyjO//LFQrDqnwj5UAiNDUibtZqWG+kVQA8fHp5+UAGhuhqcpcOiJk0BWm8TsHLDz\n1zEeinOuVWVXX8/yKuQal2aHSr0Lcey7JLhqBX0o8Gc5/CKfD7StgVlEmDf5zt6+\nZUSwS2154q+YUhmvZxyMaImpjNU7Ls2h+1QWQbYHQQCj8nSFp1CnG6Afg4ohHGL/\neD9ipp5A/hvkBKeNt5jfnBVQoPDKVpIMuUPRDx4RIKTqZwmZDZPDxZRLcx3LNuzq\n3VWLVSJaFu+IXVjBXt8vb4jflqnRJUQ+MPOzsRWZQQKBgQDXpXiQxTvPP+e0fY8m\n76SaQufT4e/1X+BMcIHR4GmZJ3TKZD9jGnfEDicnQFu6VxQsJF3Mfg3+4qJZjTKn\naDYRRkP7doogeusxxjcUY9kODRinIK6cZz20SIrAH3vSMh4hc4FshmSUtqVHLEp1\nqEVPv55v1ql3ll6/4vF52w900QKBgQDXQi9BX1GWm/JMpCMTFXyl8N2Yi6/XQZXg\n2cTAShTQM32n1lSbyn+loOlvWodlR0qiI0p88vE5DwGjzc6tEwtypkebi2eLTS6z\nRNMYFyjwCqzDbjqohqQTwrh9DZYz3M1Bd9sIDAfd/4TFJc1Qk1glzukqWxHeoD1J\ndwnm+Pz8qwKBgBXRqUREoIuUtLX/akePQcFV+aznlGboX4J8c7YvlZ+obVm5EOzP\nFcUhhXakPWO6QdFBkLgLHRFoDvMupSxpD+dpi6Fa2hj1NuzfWF1YyPJyAseON/yd\nOZIPMPLFfLrE1WWfET5QzsZ5QHnWEmabMwAhrD82ogj2jvmtVa91qbexAoGAMPI1\nuJGqBasUH2U7LH24SCtK2AL7SuD46ZXa7TZrISR0MBPGTV5wRAMg0VcublMVn2SS\n7XJ4c1b8Mnj7w9MOyVUR90ZtlvlH4y+FKHcrsdlbi1ynLebfrDacqKLMQqK0cWyF\ne4Dw0QPm9sUvuGCorIAt+JmYqJybEvdkYwa+z90CgYEAhLnfQaCgBalXoa6xz56J\n2PLm/rnkas5G+BNQJ7x+tf6U7EOjDm1jBoLtQcuRPgUd0zETATZZ/pEBQ9Xhsf0Z\ngCji6SVPwg2LcKZRbc8MpFm9m/jheIG3u/v8Y3l8tKkrXZzk4hc0mv1XOo5kyH1G\nBzla3d4R1tF3xMdyYI6fg14=\n-----END PRIVATE KEY-----\n",
+  "client_email": "groundworkzconstruction@vibrant-ring-121823.iam.gserviceaccount.com",
+  "client_id": "105176615235425097058",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/groundworkzconstruction%40vibrant-ring-121823.iam.gserviceaccount.com"
+}

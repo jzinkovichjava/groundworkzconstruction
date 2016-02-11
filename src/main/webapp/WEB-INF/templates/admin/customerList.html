@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 150px;">Name</th>
+        <th style="width: 200px;">Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${listOfCustomers}">
+        <td th:text="|${customer.firstName} ${customer.lastName}|"/>
+        <td th:text="${customer.address1}"/>
+        <td th:text="${customer.city}"/>
+        <td th:text="${customer.state}"/>
+        <td th:text="${customer.zip}"/>
+        <td th:text="${customer.emailAddress}"/>
+    </tr>
+    </tbody>
+</table>
+</div>
