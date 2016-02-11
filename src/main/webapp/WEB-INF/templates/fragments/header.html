@@ -15,8 +15,8 @@
     <div class="container">
         <img th:src="@{/resources/images/gwc_logo.png}" width="301" height="120" />
     <ul class="nav nav-pills">
-        <li role="presentation" th:classappend="${page == 'home' ? 'active' : ''}"><a href="#" th:href="@{/}"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-        <li role="presentation" th:classappend="${page == 'aboutUs' ? 'active' : ''}"><a href="#" th:href="@{/aboutUs}">About Us</a></li>
+        <li th:classappend="${page == 'home' ? 'active' : ''}"><a href="#" th:href="@{/}"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+        <li th:classappend="${page == 'aboutUs' ? 'active' : ''}"><a href="#" th:href="@{/aboutUs}">About Us</a></li>
 
         <li class="dropdown">
 
@@ -34,7 +34,7 @@
 
         </li>
 
-        <li role="presentation" th:classappend="${page == 'contactUs' ? 'active' : ''}"><a href="#" th:href="@{/customer}"><span class="glyphicon glyphicon-envelope"></span>Contact Us</a></li>
+        <li th:classappend="${page == 'contactUs' ? 'active' : ''}"><a href="#" th:href="@{/customer}"><span class="glyphicon glyphicon-envelope"></span>Contact Us</a></li>
     </ul>
     </div>
 </div>
