@@ -160,6 +160,7 @@ public class Customer {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("New Customer Stored");
+        sb.append(System.getProperty("line.separator"));
         sb.append("Customer Name:").append(this.firstName).append(" ").append(this.lastName);
         sb.append(System.getProperty("line.separator"));
         sb.append("Customer Address:").append(this.address1).append(" ").append(this.city).append(" ").append(this.state).append(" ").append(this.zip);
