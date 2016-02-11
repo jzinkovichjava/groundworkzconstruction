@@ -23,52 +23,43 @@ import java.util.Properties;
  */
 public class EmailUtil {
 
+    public static void sendMessage(String to, String subject, String content) throws MessagingException {
 
-    public static void sendFromGMail(String emailTo, String subject, String body) {
-        final String GMAIL_USERNAME = "jennifer.zinkovich@gmail.com";
-        final String GMAIL_PASSWORD = "UrmysunshineBaxBailey@";
-        Properties props = System.getProperties();
-        String host = "smtp.gmail.com";
-        props.put("mail.smtp.host", host);
-        props.put("mail.smtp.user", GMAIL_USERNAME);
-        props.put("mail.smtp.password", GMAIL_PASSWORD);
-        props.put("mail.smtp.port", "465");
+        final String username = "jen@groundworkzconstruction.com";
+        final String password = "Jenn417zink@";
+        String host = "groundworkzconstruct.ipage.com";
+
+        Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.debug", "true");
-        props.put("mail.smtp.socketFactory.port", 465);
-        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.socketFactory.fallback", "false");
         props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.port", "587");
 
-        String[] to = {emailTo};
-
-        Session session = Session.getDefaultInstance(props);
-        MimeMessage message = new MimeMessage(session);
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
 
         try {
-            message.setFrom(new InternetAddress(GMAIL_USERNAME));
-            InternetAddress[] toAddress = new InternetAddress[to.length];
 
-            // To get the array of addresses
-            for (int i = 0; i < to.length; i++) {
-                toAddress[i] = new InternetAddress(to[i]);
-            }
-
-            for (int i = 0; i < toAddress.length; i++) {
-                message.addRecipient(Message.RecipientType.TO, toAddress[i]);
-            }
-
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
             message.setSubject(subject);
-            message.setText(body);
+            message.setText(content);
 
-            Transport transport = session.getTransport("smtps");
-            transport.connect(host, 465, GMAIL_USERNAME, GMAIL_PASSWORD);
-            transport.sendMessage(message, message.getAllRecipients());
-            transport.close();
-        } catch (AddressException ae) {
-            ae.printStackTrace();
-        } catch (MessagingException me) {
-            me.printStackTrace();
+            Transport.send(message);
+
+            System.out.println("Done");
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
         }
+
+
     }
+
+
 }

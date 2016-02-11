@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.zinkovich.domain.Customer;
 import com.zinkovich.service.EmailUtil;
-import com.zinkovich.service.SendMail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -67,7 +66,7 @@ public class CustomerController {
 
 
         try {
-            SendMail.sendMail("keith@groundworkzconstruction.com", "GroundworkzConstruction Contact Us Form", customer.toString());
+            EmailUtil.sendMessage("keith@groundworkzconstruction.com", "GroundworkzConstruction Contact Us Form", customer.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
