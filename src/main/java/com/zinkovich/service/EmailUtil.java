@@ -25,8 +25,8 @@ public class EmailUtil {
 
     public static void sendMessage(String to, String subject, String content) throws MessagingException {
 
-        final String username = "jen@groundworkzconstruction.com";
-        final String password = "Jenn417zink@";
+        final String username = "info@groundworkzconstruction.com";
+        final String password = "Infogwc16@";
         String host = "groundworkzconstruct.ipage.com";
 
         Properties props = new Properties();
