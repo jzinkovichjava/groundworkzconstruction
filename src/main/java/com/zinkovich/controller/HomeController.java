@@ -21,9 +21,4 @@ public class HomeController {
         return "home/aboutUs";
     }
 
-    @RequestMapping(value = "/services", method = RequestMethod.GET)
-    public String services() {
-        return "home/services";
-    }
-
 }
